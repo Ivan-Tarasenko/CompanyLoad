@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		1A4E81002A0D114500C9E51C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E80FF2A0D114500C9E51C /* AppDelegate.swift */; };
 		1A4E81022A0D114500C9E51C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81012A0D114500C9E51C /* SceneDelegate.swift */; };
-		1A4E81042A0D114500C9E51C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81032A0D114500C9E51C /* ViewController.swift */; };
-		1A4E81072A0D114500C9E51C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4E81052A0D114500C9E51C /* Main.storyboard */; };
+		1A4E81042A0D114500C9E51C /* CompamyListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81032A0D114500C9E51C /* CompamyListController.swift */; };
 		1A4E81092A0D114600C9E51C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4E81082A0D114600C9E51C /* Assets.xcassets */; };
 		1A4E810C2A0D114600C9E51C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A4E810A2A0D114600C9E51C /* LaunchScreen.storyboard */; };
 		1A4E81172A0D114600C9E51C /* CompanyLoadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81162A0D114600C9E51C /* CompanyLoadTests.swift */; };
 		1A4E81212A0D114600C9E51C /* CompanyLoadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81202A0D114600C9E51C /* CompanyLoadUITests.swift */; };
 		1A4E81232A0D114600C9E51C /* CompanyLoadUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81222A0D114600C9E51C /* CompanyLoadUITestsLaunchTests.swift */; };
+		1A4E81382A0D127100C9E51C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81372A0D127100C9E51C /* Resources.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,7 @@
 		1A4E80FC2A0D114500C9E51C /* CompanyLoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompanyLoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4E80FF2A0D114500C9E51C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A4E81012A0D114500C9E51C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1A4E81032A0D114500C9E51C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1A4E81062A0D114500C9E51C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1A4E81032A0D114500C9E51C /* CompamyListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompamyListController.swift; sourceTree = "<group>"; };
 		1A4E81082A0D114600C9E51C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A4E810B2A0D114600C9E51C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A4E810D2A0D114600C9E51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		1A4E811C2A0D114600C9E51C /* CompanyLoadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompanyLoadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4E81202A0D114600C9E51C /* CompanyLoadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLoadUITests.swift; sourceTree = "<group>"; };
 		1A4E81222A0D114600C9E51C /* CompanyLoadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLoadUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1A4E81372A0D127100C9E51C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +99,10 @@
 		1A4E80FE2A0D114500C9E51C /* CompanyLoad */ = {
 			isa = PBXGroup;
 			children = (
-				1A4E80FF2A0D114500C9E51C /* AppDelegate.swift */,
-				1A4E81012A0D114500C9E51C /* SceneDelegate.swift */,
-				1A4E81032A0D114500C9E51C /* ViewController.swift */,
-				1A4E81052A0D114500C9E51C /* Main.storyboard */,
-				1A4E81082A0D114600C9E51C /* Assets.xcassets */,
-				1A4E810A2A0D114600C9E51C /* LaunchScreen.storyboard */,
-				1A4E810D2A0D114600C9E51C /* Info.plist */,
+				1A4E812F2A0D118D00C9E51C /* Application */,
+				1A4E81312A0D11AE00C9E51C /* Resouces */,
+				1A4E81322A0D11F500C9E51C /* Screens */,
+				1A4E81302A0D119A00C9E51C /* SupportingFiles */,
 			);
 			path = CompanyLoad;
 			sourceTree = "<group>";
@@ -127,6 +124,73 @@
 			path = CompanyLoadUITests;
 			sourceTree = "<group>";
 		};
+		1A4E812F2A0D118D00C9E51C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1A4E80FF2A0D114500C9E51C /* AppDelegate.swift */,
+				1A4E81012A0D114500C9E51C /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		1A4E81302A0D119A00C9E51C /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1A4E810D2A0D114600C9E51C /* Info.plist */,
+				1A4E810A2A0D114600C9E51C /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		1A4E81312A0D11AE00C9E51C /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				1A4E81082A0D114600C9E51C /* Assets.xcassets */,
+				1A4E81372A0D127100C9E51C /* Resources.swift */,
+			);
+			path = Resouces;
+			sourceTree = "<group>";
+		};
+		1A4E81322A0D11F500C9E51C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1A4E81332A0D11FF00C9E51C /* CompanyList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1A4E81332A0D11FF00C9E51C /* CompanyList */ = {
+			isa = PBXGroup;
+			children = (
+				1A4E81362A0D122D00C9E51C /* Model */,
+				1A4E81352A0D122100C9E51C /* View */,
+				1A4E81342A0D120E00C9E51C /* Controller */,
+			);
+			path = CompanyList;
+			sourceTree = "<group>";
+		};
+		1A4E81342A0D120E00C9E51C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1A4E81032A0D114500C9E51C /* CompamyListController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1A4E81352A0D122100C9E51C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1A4E81362A0D122D00C9E51C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +198,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A4E81262A0D114600C9E51C /* Build configuration list for PBXNativeTarget "CompanyLoad" */;
 			buildPhases = (
+				1A4E81392A0D148B00C9E51C /* Swift Lint */,
 				1A4E80F82A0D114500C9E51C /* Sources */,
 				1A4E80F92A0D114500C9E51C /* Frameworks */,
 				1A4E80FA2A0D114500C9E51C /* Resources */,
@@ -233,7 +298,6 @@
 			files = (
 				1A4E810C2A0D114600C9E51C /* LaunchScreen.storyboard in Resources */,
 				1A4E81092A0D114600C9E51C /* Assets.xcassets in Resources */,
-				1A4E81072A0D114500C9E51C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,12 +317,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A4E81392A0D148B00C9E51C /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1A4E80F82A0D114500C9E51C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A4E81042A0D114500C9E51C /* ViewController.swift in Sources */,
+				1A4E81042A0D114500C9E51C /* CompamyListController.swift in Sources */,
+				1A4E81382A0D127100C9E51C /* Resources.swift in Sources */,
 				1A4E81002A0D114500C9E51C /* AppDelegate.swift in Sources */,
 				1A4E81022A0D114500C9E51C /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +384,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1A4E81052A0D114500C9E51C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A4E81062A0D114500C9E51C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1A4E810A2A0D114600C9E51C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +499,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -439,12 +518,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2TFP9B86SX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CompanyLoad/Info.plist;
+				INFOPLIST_FILE = CompanyLoad/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,9 +531,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tarasenko.ivan-icloud.CompanyLoad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -467,12 +549,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2TFP9B86SX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CompanyLoad/Info.plist;
+				INFOPLIST_FILE = CompanyLoad/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,9 +562,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tarasenko.ivan-icloud.CompanyLoad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
