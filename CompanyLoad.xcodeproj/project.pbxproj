@@ -16,6 +16,16 @@
 		1A4E81212A0D114600C9E51C /* CompanyLoadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81202A0D114600C9E51C /* CompanyLoadUITests.swift */; };
 		1A4E81232A0D114600C9E51C /* CompanyLoadUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81222A0D114600C9E51C /* CompanyLoadUITestsLaunchTests.swift */; };
 		1A4E81382A0D127100C9E51C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81372A0D127100C9E51C /* Resources.swift */; };
+		1A4E813C2A0D191600C9E51C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E813B2A0D191600C9E51C /* Cell.swift */; };
+		1A4E813E2A0D193C00C9E51C /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E813D2A0D193C00C9E51C /* DataSource.swift */; };
+		1A4E81402A0D195500C9E51C /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E813F2A0D195500C9E51C /* Delegate.swift */; };
+		1A4E81432A0D1F6500C9E51C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1A4E81422A0D1F6500C9E51C /* SnapKit */; };
+		1A4E81462A0D20EE00C9E51C /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81452A0D20EE00C9E51C /* UIColor+Hex.swift */; };
+		1A4E814A2A0E0CAA00C9E51C /* PreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81492A0E0CAA00C9E51C /* PreloaderView.swift */; };
+		1A4E814C2A0E137800C9E51C /* SpinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E814B2A0E137800C9E51C /* SpinningView.swift */; };
+		1A4E81502A0E2FDB00C9E51C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E814F2A0E2FDB00C9E51C /* NetworkManager.swift */; };
+		1A4E81522A0E5DBB00C9E51C /* CorrentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81512A0E5DBB00C9E51C /* CorrentData.swift */; };
+		1A6D4AB52A0E6B0B00C9DFB6 /* EntityCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D4AB42A0E6B0B00C9DFB6 /* EntityCompany.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,15 @@
 		1A4E81202A0D114600C9E51C /* CompanyLoadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLoadUITests.swift; sourceTree = "<group>"; };
 		1A4E81222A0D114600C9E51C /* CompanyLoadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLoadUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1A4E81372A0D127100C9E51C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		1A4E813B2A0D191600C9E51C /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		1A4E813D2A0D193C00C9E51C /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		1A4E813F2A0D195500C9E51C /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		1A4E81452A0D20EE00C9E51C /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		1A4E81492A0E0CAA00C9E51C /* PreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderView.swift; sourceTree = "<group>"; };
+		1A4E814B2A0E137800C9E51C /* SpinningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningView.swift; sourceTree = "<group>"; };
+		1A4E814F2A0E2FDB00C9E51C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1A4E81512A0E5DBB00C9E51C /* CorrentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrentData.swift; sourceTree = "<group>"; };
+		1A6D4AB42A0E6B0B00C9DFB6 /* EntityCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityCompany.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4E81432A0D1F6500C9E51C /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +121,8 @@
 			children = (
 				1A4E812F2A0D118D00C9E51C /* Application */,
 				1A4E81312A0D11AE00C9E51C /* Resouces */,
+				1A4E814E2A0E2FAA00C9E51C /* Entitys */,
+				1A4E814D2A0E2F9100C9E51C /* NetworkManager */,
 				1A4E81322A0D11F500C9E51C /* Screens */,
 				1A4E81302A0D119A00C9E51C /* SupportingFiles */,
 			);
@@ -136,6 +158,7 @@
 		1A4E81302A0D119A00C9E51C /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				1A4E81442A0D20D000C9E51C /* Extension */,
 				1A4E810D2A0D114600C9E51C /* Info.plist */,
 				1A4E810A2A0D114600C9E51C /* LaunchScreen.storyboard */,
 			);
@@ -180,6 +203,8 @@
 		1A4E81352A0D122100C9E51C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1A4E81472A0E0C6800C9E51C /* Preloader */,
+				1A4E813A2A0D18E800C9E51C /* CompanyListTableView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +214,50 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1A4E813A2A0D18E800C9E51C /* CompanyListTableView */ = {
+			isa = PBXGroup;
+			children = (
+				1A4E813B2A0D191600C9E51C /* Cell.swift */,
+				1A4E813D2A0D193C00C9E51C /* DataSource.swift */,
+				1A4E813F2A0D195500C9E51C /* Delegate.swift */,
+			);
+			path = CompanyListTableView;
+			sourceTree = "<group>";
+		};
+		1A4E81442A0D20D000C9E51C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1A4E81452A0D20EE00C9E51C /* UIColor+Hex.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		1A4E81472A0E0C6800C9E51C /* Preloader */ = {
+			isa = PBXGroup;
+			children = (
+				1A4E81492A0E0CAA00C9E51C /* PreloaderView.swift */,
+				1A4E814B2A0E137800C9E51C /* SpinningView.swift */,
+			);
+			path = Preloader;
+			sourceTree = "<group>";
+		};
+		1A4E814D2A0E2F9100C9E51C /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				1A4E814F2A0E2FDB00C9E51C /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		1A4E814E2A0E2FAA00C9E51C /* Entitys */ = {
+			isa = PBXGroup;
+			children = (
+				1A4E81512A0E5DBB00C9E51C /* CorrentData.swift */,
+				1A6D4AB42A0E6B0B00C9DFB6 /* EntityCompany.swift */,
+			);
+			path = Entitys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +277,9 @@
 			dependencies = (
 			);
 			name = CompanyLoad;
+			packageProductDependencies = (
+				1A4E81422A0D1F6500C9E51C /* SnapKit */,
+			);
 			productName = CompanyLoad;
 			productReference = 1A4E80FC2A0D114500C9E51C /* CompanyLoad.app */;
 			productType = "com.apple.product-type.application";
@@ -280,6 +352,9 @@
 				Base,
 			);
 			mainGroup = 1A4E80F32A0D114500C9E51C;
+			packageReferences = (
+				1A4E81412A0D1F6500C9E51C /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 1A4E80FD2A0D114500C9E51C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,7 +419,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4E813E2A0D193C00C9E51C /* DataSource.swift in Sources */,
+				1A4E81462A0D20EE00C9E51C /* UIColor+Hex.swift in Sources */,
+				1A6D4AB52A0E6B0B00C9DFB6 /* EntityCompany.swift in Sources */,
+				1A4E814A2A0E0CAA00C9E51C /* PreloaderView.swift in Sources */,
+				1A4E814C2A0E137800C9E51C /* SpinningView.swift in Sources */,
+				1A4E81502A0E2FDB00C9E51C /* NetworkManager.swift in Sources */,
 				1A4E81042A0D114500C9E51C /* CompamyListController.swift in Sources */,
+				1A4E81522A0E5DBB00C9E51C /* CorrentData.swift in Sources */,
+				1A4E813C2A0D191600C9E51C /* Cell.swift in Sources */,
+				1A4E81402A0D195500C9E51C /* Delegate.swift in Sources */,
 				1A4E81382A0D127100C9E51C /* Resources.swift in Sources */,
 				1A4E81002A0D114500C9E51C /* AppDelegate.swift in Sources */,
 				1A4E81022A0D114500C9E51C /* SceneDelegate.swift in Sources */,
@@ -687,6 +771,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A4E81412A0D1F6500C9E51C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A4E81422A0D1F6500C9E51C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A4E81412A0D1F6500C9E51C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1A4E80F42A0D114500C9E51C /* Project object */;
 }
