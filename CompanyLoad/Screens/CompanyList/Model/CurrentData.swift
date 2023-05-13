@@ -1,19 +1,14 @@
 //
-//  EntityCompany.swift
+//  CurrentData.swift
 //  CompanyLoad
 //
 //  Created by Иван Тарасенко on 12.05.2023.
 //
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let welcome = try? JSONDecoder().decode(Welcome.self, from: jsonData)
-
 import Foundation
 
-// MARK: - WelcomeElement
-struct WelcomeElement: Codable {
+// MARK: - CurrentData
+struct CurrentData: Codable {
     let company: Company
     let customerMarkParameters: CustomerMarkParameters
     let mobileAppDashboard: MobileAppDashboard
@@ -36,17 +31,12 @@ struct CustomerMarkParameters: Codable {
 
 // MARK: - LoyaltyLevel
 struct LoyaltyLevel: Codable {
-    let number: Int
     let name: String
-    let requiredSum, markToCash, cashToMark: Int
+    let cashToMark: Int
 }
 
 // MARK: - MobileAppDashboard
 struct MobileAppDashboard: Codable {
     let companyName: String
     let logo: String
-    let backgroundColor, mainColor, cardBackgroundColor, textColor: String
-    let highlightTextColor, accentColor: String
 }
-
-typealias Welcome = [WelcomeElement]

@@ -32,24 +32,12 @@ final class PreloaderView: UIView {
     }
 }
 
-// MARK: - Public method
-extension PreloaderView {
-    
-    func startAnivation() {
-        spinning.startAnimate()
-    }
-    
-    func stopAnivation() {
-        spinning.stopAnimate()
-    }
-}
-
 // MARK: - Private method
 private extension PreloaderView {
     
     // MARK: - Configure view
     func configureView() {
-       
+        spinning.startAnimate()
        backgroundColor = .clear
     }
     

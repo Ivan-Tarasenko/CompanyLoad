@@ -9,19 +9,29 @@ import UIKit
 
 final class CompanyListTableViewDataSource: NSObject, UITableViewDataSource {
     
-    let net = NetworkManager()
+    var companies: [EntityCompany] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return companies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CompanyListCell.identifier, for: indexPath)
                 as? CompanyListCell else { fatalError("Cell nil") }
         
+        let comdanyName = companies[indexPath.row].name
+        let logo = companies[indexPath.row].urlLogo
+        let score = companies[indexPath.row].score
+        let cashback = companies[indexPath.row].cashback
+        let level = companies[indexPath.row].level
         
-        cell.installScoreLabel(text: "6000 баллов")
-        
+        cell.massage = companies[indexPath.row].idCompany
+        cell.installCompanyName(name: comdanyName)
+        cell.installLogo(logo)
+        cell.installScoreLabel(text: "\(score) баллов")
+        cell.installCachback(cashback)
+        cell.installLevel(level)
+
         return cell
     }
 }
