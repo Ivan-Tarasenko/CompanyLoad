@@ -10,6 +10,7 @@
 <p align="center">
 <img src="/Preview/launchScreen.png" width="149" height="300"/>
 <img src="/Preview/main1.gif" width="149" height="300"/>
+<img src="/Preview/main2.gif" width="149" height="300"/>
 </p>
 
 ## Description
