@@ -29,6 +29,7 @@
 		1A6D4AB92A0EA58D00C9DFB6 /* EntityCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D4AB82A0EA58D00C9DFB6 /* EntityCompany.swift */; };
 		1A6D4ABC2A0EC50400C9DFB6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1A6D4ABB2A0EC50400C9DFB6 /* Kingfisher */; };
 		1A6D4ABF2A0FBD9500C9DFB6 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D4ABE2A0FBD9500C9DFB6 /* AlertService.swift */; };
+		1A6D4AC82A1026EC00C9DFB6 /* IDElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D4AC72A1026EC00C9DFB6 /* IDElements.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		1A6D4AB62A0E814700C9DFB6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		1A6D4AB82A0EA58D00C9DFB6 /* EntityCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityCompany.swift; sourceTree = "<group>"; };
 		1A6D4ABE2A0FBD9500C9DFB6 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		1A6D4AC72A1026EC00C9DFB6 /* IDElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDElements.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				1A4E81202A0D114600C9E51C /* CompanyLoadUITests.swift */,
 				1A4E81222A0D114600C9E51C /* CompanyLoadUITestsLaunchTests.swift */,
+				1A6D4AC72A1026EC00C9DFB6 /* IDElements.swift */,
 			);
 			path = CompanyLoadUITests;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A4E81232A0D114600C9E51C /* CompanyLoadUITestsLaunchTests.swift in Sources */,
+				1A6D4AC82A1026EC00C9DFB6 /* IDElements.swift in Sources */,
 				1A4E81212A0D114600C9E51C /* CompanyLoadUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,7 +680,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2TFP9B86SX;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tarasenko.ivan-icloud.CompanyLoadTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -696,7 +700,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2TFP9B86SX;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tarasenko.ivan-icloud.CompanyLoadTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

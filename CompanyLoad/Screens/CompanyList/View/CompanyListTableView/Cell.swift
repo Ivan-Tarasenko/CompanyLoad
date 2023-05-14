@@ -29,6 +29,7 @@ final class CompanyListCell: UITableViewCell {
         let iView = UIImageView()
         iView.contentMode = .scaleAspectFit
         iView.layer.cornerRadius = 47 / 2
+        iView.clipsToBounds = true
         return iView
     }()
     
@@ -121,6 +122,7 @@ final class CompanyListCell: UITableViewCell {
         addedSubview()
         addedConstraint()
         addedTarget()
+        createAccesibilityIdentifier()
     }
     
     required init?(coder: NSCoder) {
@@ -327,5 +329,23 @@ private extension CompanyListCell {
         detailCardButton.snp.makeConstraints { make in
             make.height.equalTo(buttonStackView)
         }
+    }
+}
+
+// MARK: - AccessibilityIdentifier
+private extension CompanyListCell {
+    func createAccesibilityIdentifier() {
+        titleLabel.accessibilityIdentifier = "title_Label"
+        imageCard.accessibilityIdentifier = "image_Card"
+        topSeparator.accessibilityIdentifier = "top_Separator"
+        scoreLabel.accessibilityIdentifier = "score_Label"
+        cashbackLabel.accessibilityIdentifier = "cashback_Label"
+        percentCachbackLabel.accessibilityIdentifier = "percent_Cachback_Label"
+        levelLabel.accessibilityIdentifier = "level_Label"
+        disriptionLevelLabel.accessibilityIdentifier = "disription_Level_Label"
+        bottomSeparator.accessibilityIdentifier = "bottom_Separator"
+        hideCardButton.accessibilityIdentifier = "hide_Card_Button"
+        trashCardButton.accessibilityIdentifier = "trash_Card_Button"
+        detailCardButton.accessibilityIdentifier = "detail_Card_Button"
     }
 }
