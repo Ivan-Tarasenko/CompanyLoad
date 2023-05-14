@@ -9,118 +9,67 @@ import Foundation
 import UIKit
 
 protocol NetworkManagerProtocol: AnyObject {
-//    func fetchData(completion: @escaping ([String: Currency]?, Error?) -> Void)
+    func loadingData(page: Int, completion: @escaping ([EntityCompany]?, URLResponse?, Error?, String?) -> Void)
+    
 }
 
 final class NetworkManager: NetworkManagerProtocol {
     
-    var image = UIImage()
-    var urlImage = String()
+    let url = "http://dev.bonusmoney.pro/mobileapp/getAllCompanies"
     
-    // MARK: - Fetch data
-//    func fetchData(completion: @escaping () -> Void) {
-//        guard let URL = URL(string: urlString) else { return }
-//        let session = URLSession(configuration: .default)
-//
-//        let task = session.dataTask(with: URL) { data, response, error in
-//
-//            var data = data
-//
-//            if error != nil {
-//
-//
-//
-//            }
-//
-//            if let httpResponse = response as? HTTPURLResponse {
-//
-//                    print(httpResponse.statusCode)
-//
-//
-//
-//               }
-//
-//            if let data = data {
-//
-//                if let currencyEntity =  self.parseJSON(withData: data) {
-//                    DispatchQueue.main.async {
-//
-//                    }
-//                }
-//            }
-//        }
-//        task.resume()
-//    }
-
-    func fetchData() {
-        let parameters = "{\n\t\"offset\": 0\n}"
+    func loadingData(page: Int, completion: @escaping ([EntityCompany]?, URLResponse?, Error?, String?) -> Void) {
+        
+        let parameters = "{\n\t\"offset\": \(page)\n}"
         let postData = parameters.data(using: .utf8)
-
-        var request = URLRequest(url: URL(string: "http://dev.bonusmoney.pro/mobileapp/getAllCompaniesLong")!,
+        
+        var request = URLRequest(url: URL(string: url)!,
                                  timeoutInterval: Double.infinity)
         request.addValue("123", forHTTPHeaderField: "TOKEN")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
+        
         request.httpMethod = "POST"
         request.httpBody = postData
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-         
-            if let httpResponse = response as? HTTPURLResponse {
-
-                    print("/////////////\(httpResponse.statusCode)")
-                
-               }
-
-            guard let data = data else {
-                print("/////////////////\(String(describing: error))/////////////////")
-                return
-            }
-            let welcome = try? JSONDecoder().decode(Welcome.self, from: data)
-            
-            self.urlImage = (welcome?[0].mobileAppDashboard.logo)!
-            
-            print(welcome?[0].mobileAppDashboard.logo)
-//            print(String(data: data, encoding: .utf8)!)
-            
-            self.getImage()
-        }
-
-        task.resume()
-
-    }
-    
-    func getImage() {
         
-        if !urlImage.isEmpty {
+        URLSession.shared.dataTask(with: request) { data, response, error in
             
-            let url = URL(string: urlImage)!
+            // processing error
+            if error != nil {
+                completion(nil, nil, error, nil)
+            }
             
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                
-                if let data = data {
-                    DispatchQueue.main.async {
-                        self.image = UIImage(data: data) ?? UIImage()
-                    }
+            // processing response
+            if response != nil {
+                if let responseData = data,
+                   let jsonResponse = try? JSONSerialization.jsonObject(with: responseData, options: []),
+                   let errorDict = jsonResponse as? [String: Any],
+                   let errorMessage = errorDict["message"] as? String {
+                    completion(nil, response, nil, errorMessage)
                 }
-            }.resume()
-        }
-    }
-    
-    
-    
-    
-    
-    private func parseJSON(withData data: Data) -> Welcome? {
-        let decoder = JSONDecoder()
-        do {
-            let currentDate = try decoder.decode(Welcome.self, from: data)
-//            guard let currencyEntity = CurrencyEntity(currencyEntity: currentDate) else { return nil }
-//            return currencyEntity
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-        return nil
+                completion(nil, response, nil, nil)
+            }
+            
+            // processing data
+            if let data = data {
+                
+                do {
+                    
+                    let currentData = try JSONDecoder().decode([CurrentData].self, from: data)
+                    var entityCompanies: [EntityCompany] = []
+                    
+                    DispatchQueue.main.async {
+                        currentData.forEach({ company in
+                            guard let entityCompany = EntityCompany(data: company) else { return }
+                            entityCompanies.append(entityCompany)
+                        })
+                        
+                        completion(entityCompanies, nil, nil, nil)
+                    }
+                    
+                } catch {
+                    
+                    completion(nil, nil, nil, nil)
+                }
+            }
+        }.resume()
     }
 }
-

@@ -24,8 +24,11 @@
 		1A4E814A2A0E0CAA00C9E51C /* PreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81492A0E0CAA00C9E51C /* PreloaderView.swift */; };
 		1A4E814C2A0E137800C9E51C /* SpinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E814B2A0E137800C9E51C /* SpinningView.swift */; };
 		1A4E81502A0E2FDB00C9E51C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E814F2A0E2FDB00C9E51C /* NetworkManager.swift */; };
-		1A4E81522A0E5DBB00C9E51C /* CorrentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81512A0E5DBB00C9E51C /* CorrentData.swift */; };
-		1A6D4AB52A0E6B0B00C9DFB6 /* EntityCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D4AB42A0E6B0B00C9DFB6 /* EntityCompany.swift */; };
+		1A4E81522A0E5DBB00C9E51C /* CurrentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4E81512A0E5DBB00C9E51C /* CurrentData.swift */; };
+		1A6D4AB72A0E814700C9DFB6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D4AB62A0E814700C9DFB6 /* ViewModel.swift */; };
+		1A6D4AB92A0EA58D00C9DFB6 /* EntityCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D4AB82A0EA58D00C9DFB6 /* EntityCompany.swift */; };
+		1A6D4ABC2A0EC50400C9DFB6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1A6D4ABB2A0EC50400C9DFB6 /* Kingfisher */; };
+		1A6D4ABF2A0FBD9500C9DFB6 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D4ABE2A0FBD9500C9DFB6 /* AlertService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +69,10 @@
 		1A4E81492A0E0CAA00C9E51C /* PreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderView.swift; sourceTree = "<group>"; };
 		1A4E814B2A0E137800C9E51C /* SpinningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningView.swift; sourceTree = "<group>"; };
 		1A4E814F2A0E2FDB00C9E51C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		1A4E81512A0E5DBB00C9E51C /* CorrentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrentData.swift; sourceTree = "<group>"; };
-		1A6D4AB42A0E6B0B00C9DFB6 /* EntityCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityCompany.swift; sourceTree = "<group>"; };
+		1A4E81512A0E5DBB00C9E51C /* CurrentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentData.swift; sourceTree = "<group>"; };
+		1A6D4AB62A0E814700C9DFB6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		1A6D4AB82A0EA58D00C9DFB6 /* EntityCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityCompany.swift; sourceTree = "<group>"; };
+		1A6D4ABE2A0FBD9500C9DFB6 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A6D4ABC2A0EC50400C9DFB6 /* Kingfisher in Frameworks */,
 				1A4E81432A0D1F6500C9E51C /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,7 +127,7 @@
 			children = (
 				1A4E812F2A0D118D00C9E51C /* Application */,
 				1A4E81312A0D11AE00C9E51C /* Resouces */,
-				1A4E814E2A0E2FAA00C9E51C /* Entitys */,
+				1A6D4ABD2A0FBD6E00C9DFB6 /* Services */,
 				1A4E814D2A0E2F9100C9E51C /* NetworkManager */,
 				1A4E81322A0D11F500C9E51C /* Screens */,
 				1A4E81302A0D119A00C9E51C /* SupportingFiles */,
@@ -196,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				1A4E81032A0D114500C9E51C /* CompamyListController.swift */,
+				1A6D4AB62A0E814700C9DFB6 /* ViewModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -212,6 +219,8 @@
 		1A4E81362A0D122D00C9E51C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1A6D4AB82A0EA58D00C9DFB6 /* EntityCompany.swift */,
+				1A4E81512A0E5DBB00C9E51C /* CurrentData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,13 +260,12 @@
 			path = NetworkManager;
 			sourceTree = "<group>";
 		};
-		1A4E814E2A0E2FAA00C9E51C /* Entitys */ = {
+		1A6D4ABD2A0FBD6E00C9DFB6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				1A4E81512A0E5DBB00C9E51C /* CorrentData.swift */,
-				1A6D4AB42A0E6B0B00C9DFB6 /* EntityCompany.swift */,
+				1A6D4ABE2A0FBD9500C9DFB6 /* AlertService.swift */,
 			);
-			path = Entitys;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +287,7 @@
 			name = CompanyLoad;
 			packageProductDependencies = (
 				1A4E81422A0D1F6500C9E51C /* SnapKit */,
+				1A6D4ABB2A0EC50400C9DFB6 /* Kingfisher */,
 			);
 			productName = CompanyLoad;
 			productReference = 1A4E80FC2A0D114500C9E51C /* CompanyLoad.app */;
@@ -354,6 +363,7 @@
 			mainGroup = 1A4E80F32A0D114500C9E51C;
 			packageReferences = (
 				1A4E81412A0D1F6500C9E51C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1A6D4ABA2A0EC50400C9DFB6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 1A4E80FD2A0D114500C9E51C /* Products */;
 			projectDirPath = "";
@@ -421,16 +431,18 @@
 			files = (
 				1A4E813E2A0D193C00C9E51C /* DataSource.swift in Sources */,
 				1A4E81462A0D20EE00C9E51C /* UIColor+Hex.swift in Sources */,
-				1A6D4AB52A0E6B0B00C9DFB6 /* EntityCompany.swift in Sources */,
 				1A4E814A2A0E0CAA00C9E51C /* PreloaderView.swift in Sources */,
 				1A4E814C2A0E137800C9E51C /* SpinningView.swift in Sources */,
+				1A6D4ABF2A0FBD9500C9DFB6 /* AlertService.swift in Sources */,
 				1A4E81502A0E2FDB00C9E51C /* NetworkManager.swift in Sources */,
+				1A6D4AB72A0E814700C9DFB6 /* ViewModel.swift in Sources */,
 				1A4E81042A0D114500C9E51C /* CompamyListController.swift in Sources */,
-				1A4E81522A0E5DBB00C9E51C /* CorrentData.swift in Sources */,
+				1A4E81522A0E5DBB00C9E51C /* CurrentData.swift in Sources */,
 				1A4E813C2A0D191600C9E51C /* Cell.swift in Sources */,
 				1A4E81402A0D195500C9E51C /* Delegate.swift in Sources */,
 				1A4E81382A0D127100C9E51C /* Resources.swift in Sources */,
 				1A4E81002A0D114500C9E51C /* AppDelegate.swift in Sources */,
+				1A6D4AB92A0EA58D00C9DFB6 /* EntityCompany.swift in Sources */,
 				1A4E81022A0D114500C9E51C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,6 +793,14 @@
 				kind = branch;
 			};
 		};
+		1A6D4ABA2A0EC50400C9DFB6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -788,6 +808,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A4E81412A0D1F6500C9E51C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		1A6D4ABB2A0EC50400C9DFB6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A6D4ABA2A0EC50400C9DFB6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

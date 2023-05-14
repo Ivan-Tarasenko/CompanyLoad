@@ -7,22 +7,28 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class CompanyListCell: UITableViewCell {
+    
+    var onHideButtonPressed: (() -> Void)?
+    var onTrashButtonPressed: (() -> Void)?
+    var onDetailButtonPressed: (() -> Void)?
+    
+    var massage: String?
     
     // MARK: - Outlets
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = R.Colors.highlightTextColor
         label.font = UIFont.systemFont(ofSize: 25)
-        label.text = "Bonus Money"
         return label
     }()
     
     private let imageCard: UIImageView = {
         let iView = UIImageView()
-        iView.image = UIImage(named: "imageCard")
         iView.contentMode = .scaleAspectFit
+        iView.layer.cornerRadius = 47 / 2
         return iView
     }()
     
@@ -38,7 +44,7 @@ final class CompanyListCell: UITableViewCell {
         return label
     }()
     
-    private let cachbackLabel: UILabel = {
+    private let cashbackLabel: UILabel = {
         let label = UILabel()
         label.text = "Keшбэк"
         label.textColor = R.Colors.textColor
@@ -48,7 +54,6 @@ final class CompanyListCell: UITableViewCell {
     
     private let percentCachbackLabel: UILabel = {
         let label = UILabel()
-        label.text = "1%"
         label.font = UIFont(name: "Noto Sans Oriya", size: 19)
         return label
     }()
@@ -63,7 +68,6 @@ final class CompanyListCell: UITableViewCell {
     
     private let disriptionLevelLabel: UILabel = {
         let label = UILabel()
-        label.text = "Базовый уровень тест"
         label.font = UIFont(name: "Noto Sans Oriya", size: 19)
         return label
     }()
@@ -116,6 +120,7 @@ final class CompanyListCell: UITableViewCell {
         setButtonStackView()
         addedSubview()
         addedConstraint()
+        addedTarget()
     }
     
     required init?(coder: NSCoder) {
@@ -123,17 +128,42 @@ final class CompanyListCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-            super.layoutSubviews()
-            contentView.frame = CGRect(x: 20, y: 10, width: bounds.width - 40, height: bounds.height - 20)
-            contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        }
+        super.layoutSubviews()
+        contentView.frame = CGRect(x: 20, y: 10, width: bounds.width - 40, height: bounds.height - 20)
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
 }
 
 // MARK: - Public method
 extension CompanyListCell {
+    
+    func installCompanyName(name: String) {
+        titleLabel.text = name
+    }
+    
+    func installLogo(_ url: String) {
+        let url = URL(string: url)
+        imageCard.kf.setImage(with: url) { result in
+            switch result {
+            case .failure:
+                self.imageCard.image = UIImage(named: "imageCard")
+            case .success:
+                break
+            }
+        }
+    }
+    
+    func installCachback(_ sum: Int) {
+        percentCachbackLabel.text = "\(sum)%"
+    }
+    
+    func installLevel(_ text: String) {
+        disriptionLevelLabel.text = text
+    }
+    
     func installScoreLabel(text: String) {
         let attributedText = NSMutableAttributedString(string: text)
-
+        
         let digitsAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: R.Colors.highlightTextColor,
             .font: UIFont.systemFont(ofSize: 28)
@@ -142,7 +172,7 @@ extension CompanyListCell {
         let lettersAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: R.Colors.textColor
         ]
-
+        
         for index in attributedText.string.indices {
             let character = attributedText.string[index]
             let charConteins = character.unicodeScalars.first
@@ -160,6 +190,23 @@ extension CompanyListCell {
         scoreLabel.attributedText = attributedText
     }
 }
+
+// MARK: - Button action
+@objc extension CompanyListCell {
+    
+    func hideCardButtonAction() {
+        AlertService.shared.showAlert(title: "Кнопка скрытия ячейки", massage: massage ?? "")
+    }
+    
+    func trashCardButtonAction() {
+        AlertService.shared.showAlert(title: "Кнопка удаления ячейки", massage: massage ?? "")
+    }
+    
+    func detailCardButtonAction() {
+        AlertService.shared.showAlert(title: "Кнопка Подробнее", massage: massage ?? "")
+    }
+}
+
 // MARK: - Private method
 private extension CompanyListCell {
     
@@ -169,6 +216,12 @@ private extension CompanyListCell {
         selectionStyle = .none
         contentView.backgroundColor = .white
         contentView.layer.cornerRadius = 30
+    }
+    
+    func addedTarget() {
+        hideCardButton.addTarget(self, action: #selector(hideCardButtonAction), for: .touchUpInside)
+        trashCardButton.addTarget(self, action: #selector(trashCardButtonAction), for: .touchUpInside)
+        detailCardButton.addTarget(self, action: #selector(detailCardButtonAction), for: .touchUpInside)
     }
     
     func setMainTitleStackView() {
@@ -182,7 +235,7 @@ private extension CompanyListCell {
     func setCachbackStackView() {
         cachbackStackView.axis = .vertical
         cachbackStackView.alignment = .leading
-        cachbackStackView.addArrangedSubview(cachbackLabel)
+        cachbackStackView.addArrangedSubview(cashbackLabel)
         cachbackStackView.addArrangedSubview(percentCachbackLabel)
     }
     

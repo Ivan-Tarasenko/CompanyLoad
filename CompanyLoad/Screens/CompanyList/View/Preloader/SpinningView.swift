@@ -34,12 +34,6 @@ final class SpinningView: UIView {
 
     }
     
-    func stopAnimate() {
-        print("stop animation")
-        layer.removeAllAnimations()
-        layoutIfNeeded()
-    }
-    
     private func configereView() {
         frame = CGRect(x: 0, y: 0, width: 45, height: 45)
         

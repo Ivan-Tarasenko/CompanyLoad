@@ -20,14 +20,14 @@ class CompamyListController: UIViewController {
         return button
     }()
     
-    private var tableView = UITableView()
-    
     // MARK: - Variables
-    private let dataSource: CompanyListTableViewDataSource
-    private let delegate: CompanyListTableViewDelegate
+    var dataSource: CompanyListTableViewDataSource
+    var delegate: CompanyListTableViewDelegate
+    private let viewModel: ViewModelProtocol = ViewModel()
+    private var tableView = UITableView()
+    private var loadPage: Int = 0
+    private var isEmptyData: Bool = false
     
-    let networkManaager = NetworkManager()
-
     // MARK: - Lifecycle
     init(dataSourse: CompanyListTableViewDataSource, delegate: CompanyListTableViewDelegate) {
         self.dataSource = dataSourse
@@ -41,29 +41,65 @@ class CompamyListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        networkManaager.fetchData()
-        
+        bing()
         configureView()
         configureTableView()
         addedSubview()
         addedConstraint()
-        bing()
         showPreloader()
+        dataReloading()
+        cancelReloading()
+        handleError()
+        viewModel.fetchData(page: loadPage)
     }
 }
 
-// MARK: - Actions
-extension CompamyListController {
+// MARK: - Data processing
+private extension CompamyListController {
+    func bing() {
+        viewModel.onUpDataCompany = { [weak self] data in
+            guard let self else { return }
+            self.tableView.dataSource = self.dataSource
+            self.tableView.delegate = self.delegate
+            self.dataSource.companies = data
+            self.delegate.isEndOfList = self.isEmptyData
+            self.tableView.reloadData()
+        }
+    }
+    
+    func cancelReloading() {
+        viewModel.onDataEmpty = { [weak self] isEmpty in
+            guard let self else { return }
+            if isEmpty {
+                self.isEmptyData = true
+                self.tableView.tableFooterView = nil
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func dataReloading() {
+        delegate.onScrollAction = { [weak self] in
+            guard let self else { return }
+            self.loadPage += 1
+            self.viewModel.fetchData(page: self.loadPage)
+        }
+    }
     
     func showPreloader() {
-        delegate.onScrollAction = {
-            let footerView = PreloaderView()
-            
-            footerView.startAnivation()
-            footerView.frame.size.height = 150
-            self.tableView.tableFooterView = footerView
-            
+        let footerView = PreloaderView()
+        footerView.frame.size.height = 150
+        tableView.tableFooterView = footerView
+    }
+    
+    func handleError() {
+        viewModel.onRequestError = { string in
+            if let string = string {
+                DispatchQueue.main.async {
+                    AlertService.shared.showAlert(title: "Error", massage: string)
+                    self.tableView.tableFooterView = nil
+                }
+            }
         }
     }
 }
@@ -73,11 +109,11 @@ private extension CompamyListController {
     
     // MARK: - Configuration
     func configureView() {
-//        view.backgroundColor = R.Colors.backgroundColor
+        view.backgroundColor = .white
     }
     
-   func configureTableView() {
-       tableView.backgroundColor = R.Colors.backgroundColor
+    func configureTableView() {
+        tableView.backgroundColor = R.Colors.backgroundColor
         tableView.separatorStyle = .none
         tableView.register(CompanyListCell.self, forCellReuseIdentifier: CompanyListCell.identifier)
     }
@@ -87,15 +123,9 @@ private extension CompamyListController {
         view.addSubview(tableView)
     }
     
-     func bing() {
-        tableView.dataSource = dataSource
-        tableView.delegate = delegate
-//        dataSource.viewModel = viewModel
-    }
-    
     func addedConstraint() {
         cardManagementButton.snp.makeConstraints { make in
-            make.height.equalTo(45)
+            make.height.equalTo(50)
             make.leading.top.equalTo(view.safeAreaLayoutGuide)
             make.trailing.equalTo(view)
         }

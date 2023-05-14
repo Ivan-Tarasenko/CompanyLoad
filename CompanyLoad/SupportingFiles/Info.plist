@@ -30,6 +30,11 @@
             <key>NSExceptionAllowsInsecureHTTPLoads</key>
             <true/>
         </dict>
+<key>bonusmoney.info</key>
+        <dict>
+            <key>NSExceptionAllowsInsecureHTTPLoads</key>
+            <true/>
+        </dict>
     </dict>
 </dict>
 </dict>

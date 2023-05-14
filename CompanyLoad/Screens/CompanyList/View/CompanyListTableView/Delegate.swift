@@ -10,7 +10,8 @@ import UIKit
 final class CompanyListTableViewDelegate: NSObject, UITableViewDelegate {
     
     var onScrollAction: (() -> Void)?
-    var onTapCell: ((Int) -> Void)?
+    
+    var isEndOfList: Bool = false
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 285
@@ -18,17 +19,10 @@ final class CompanyListTableViewDelegate: NSObject, UITableViewDelegate {
     
      func scrollViewDidScroll(_ scrollView: UIScrollView) {
          if scrollView.contentOffset.y + scrollView.frame.height >= scrollView.contentSize.height {
+             if !isEndOfList {
+                 onScrollAction?()
+                 isEndOfList = true
+             }
          }
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        onScrollAction?()
-        print("end")
-    }
-    
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        onTapCell?(indexPath.row)
-//    }
+     }
 }
