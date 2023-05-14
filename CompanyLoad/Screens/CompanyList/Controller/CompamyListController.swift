@@ -50,7 +50,16 @@ class CompamyListController: UIViewController {
         dataReloading()
         cancelReloading()
         handleError()
+        createAccesibilityIdentifier()
         viewModel.fetchData(page: loadPage)
+    }
+}
+
+// MARK: - Button action
+@objc extension CompamyListController {
+    
+    func cardManagementButtonPressed() {
+        AlertService.shared.showAlert(title: "Кнопка управления", massage: "")
     }
 }
 
@@ -116,6 +125,7 @@ private extension CompamyListController {
         tableView.backgroundColor = R.Colors.backgroundColor
         tableView.separatorStyle = .none
         tableView.register(CompanyListCell.self, forCellReuseIdentifier: CompanyListCell.identifier)
+        cardManagementButton.addTarget(self, action: #selector(cardManagementButtonPressed), for: .touchUpInside)
     }
     
     func addedSubview() {
@@ -136,5 +146,13 @@ private extension CompamyListController {
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
+    }
+}
+
+// MARK: - AccessibilityIdentifier
+private extension CompamyListController {
+    func createAccesibilityIdentifier() {
+        cardManagementButton.accessibilityIdentifier = "card_Management_Button"
+        tableView.accessibilityIdentifier = "table_View"
     }
 }

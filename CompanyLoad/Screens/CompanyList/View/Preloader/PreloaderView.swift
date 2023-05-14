@@ -25,6 +25,7 @@ final class PreloaderView: UIView {
         configureView()
         addedSubview()
         addedConstraint()
+        createAccesibilityIdentifier()
     }
     
     required init?(coder: NSCoder) {
@@ -56,5 +57,13 @@ private extension PreloaderView {
             make.centerX.equalTo(self)
             make.top.equalTo(spinning.snp.bottom).offset(20)
         }
+    }
+}
+
+// MARK: - AccessibilityIdentifier
+private extension PreloaderView {
+    func createAccesibilityIdentifier() {
+        spinning.accessibilityIdentifier = "spinning"
+        textLabel.accessibilityIdentifier = "text_Label"
     }
 }
